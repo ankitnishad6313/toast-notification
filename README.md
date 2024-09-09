@@ -1,4 +1,4 @@
-@if ($errors->any())
+ @if ($errors->any())
         @foreach ($errors->all() as $error)
             <script>
                 triggerAlert('{{ $error }}', 'error')
@@ -15,4 +15,4 @@
         <script>
             triggerAlert("{{ session('error') }}", 'error')
         </script>
-    @endif
+@endif
