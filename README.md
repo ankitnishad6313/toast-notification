@@ -1,2 +1,18 @@
-# toast-notification
-Tost Notification 
+@if ($errors->any())
+        @foreach ($errors->all() as $error)
+            <script>
+                triggerAlert('{{ $error }}', 'error')
+            </script>
+        @endforeach
+    @endif
+    @if (session('success'))
+        <script>
+            triggerAlert("{{ session('success') }}", 'success')
+        </script>
+    @endif
+
+    @if (session('error'))
+        <script>
+            triggerAlert("{{ session('error') }}", 'error')
+        </script>
+    @endif
